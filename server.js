@@ -8,9 +8,11 @@ import carritoRoutes from "./routes/carrito.routes.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
+
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'))
 
 // Rutas de las API
 app.use("/api/productos", productRoutes);
